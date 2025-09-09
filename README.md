@@ -3,7 +3,7 @@
 A sleek, modular Neovim configuration featuring a glassmorphic design with vibrant neon accents. Built for productivity with modern LSP support, intelligent completion, and a beautiful dashboard experience.
 
 ![Neovim Version](https://img.shields.io/badge/Neovim-0.8+-green.svg)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-blue.svg)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## ✨ Features
