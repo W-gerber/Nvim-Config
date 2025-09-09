@@ -148,7 +148,7 @@ M.neon = {
 }
 ```
 
-### Alternative Themes
+### Alternative Themes more on the way
 
 To switch to a different colorscheme:
 
