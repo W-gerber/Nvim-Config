@@ -15,3 +15,6 @@ telescope.setup({
     mappings = { i = { ['<esc>'] = actions.close } },
   }
 })
+
+-- Load extensions if installed
+pcall(telescope.load_extension, 'live_grep_args')

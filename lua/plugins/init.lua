@@ -41,8 +41,11 @@ local plugins = {
       { '<leader>fg', '<cmd>Telescope live_grep<cr>', desc = 'Live grep' },
       { '<leader>fb', '<cmd>Telescope buffers<cr>', desc = 'Buffers' },
       { '<leader>fr', '<cmd>Telescope oldfiles<cr>', desc = 'Recent files' },
+    { '<leader>sg', function() require('telescope').extensions.live_grep_args.live_grep_args() end, desc = 'Live grep (args)' },
     },
   },
+  -- Telescope extension: live_grep_args
+  { 'nvim-telescope/telescope-live-grep-args.nvim', dependencies = { 'nvim-telescope/telescope.nvim' } },
 
   -- Treesitter
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = { 'BufReadPost', 'BufNewFile' } },
@@ -74,6 +77,8 @@ local plugins = {
   { 'ahmedkhalf/project.nvim', event = 'VeryLazy' },
   { 'tpope/vim-fugitive', cmd = { 'Git', 'Gread', 'Gwrite', 'Gdiffsplit' } },
   { 'sindrets/diffview.nvim', dependencies = { 'nvim-lua/plenary.nvim' }, cmd = 'DiffviewOpen' },
+  { 'folke/todo-comments.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'ThePrimeagen/harpoon', branch = 'harpoon2', event = 'VeryLazy' },
 
   -- Language specific
   { 'mfussenegger/nvim-jdtls', ft = 'java' },
@@ -82,10 +87,29 @@ local plugins = {
   { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', event = 'BufReadPost', opts = {} },
   { 'karb94/neoscroll.nvim', event = 'BufReadPost' },
   { 'windwp/nvim-autopairs', event = 'InsertEnter' },
+  { 'rcarriga/nvim-notify' },
+  { 'folke/noice.nvim', dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' } },
+  { 'Bekaboo/dropbar.nvim', dependencies = { 'nvim-telescope/telescope.nvim', 'nvim-tree/nvim-web-devicons' } },
+  { 'shellRaining/hlchunk.nvim' },
+  { 'stevearc/aerial.nvim' },
 
   -- Search / navigation
-  { 'nvim-pack/nvim-spectre', cmd = 'Spectre' },
-  { 'folke/trouble.nvim', cmd = 'Trouble' },
+  { 'nvim-pack/nvim-spectre', cmd = 'Spectre',
+    keys = {
+      { '<leader>sr', function() require('spectre').open() end, desc = 'Search/Replace (Spectre)' },
+    },
+  },
+  { 'folke/trouble.nvim', cmd = 'Trouble', dependencies = { 'nvim-tree/nvim-web-devicons' }, config = true,
+    keys = {
+      { '<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', desc = 'Diagnostics (Trouble)' },
+      { '<leader>xw', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', desc = 'Buffer Diagnostics (Trouble)' },
+      { '<leader>xs', '<cmd>Trouble symbols toggle<cr>', desc = 'Document Symbols (Trouble)' },
+      { '<leader>xl', '<cmd>Trouble lsp toggle<cr>', desc = 'LSP Definitions/Refs (Trouble)' },
+      { '<leader>xq', '<cmd>Trouble qflist toggle<cr>', desc = 'Quickfix (Trouble)' },
+    }
+  },
+  { 'mfussenegger/nvim-dap' },
+  { 'rcarriga/nvim-dap-ui', dependencies = { 'mfussenegger/nvim-dap' } },
 
   -- Formatting & linting (null-ls; safe checks inside config file)
   { 'jose-elias-alvarez/null-ls.nvim', event = 'BufReadPre' },
@@ -134,5 +158,14 @@ pcall(require, "plugins.config.diffview")
 pcall(require, "plugins.config.jdtls")
 pcall(require, "plugins.config.neoscroll")
 pcall(require, "plugins.config.autopairs")
+pcall(require, "plugins.config.noice")
+pcall(require, "plugins.config.notify")
+pcall(require, "plugins.config.todo-comments")
+pcall(require, "plugins.config.dropbar")
+pcall(require, "plugins.config.hlchunk")
+pcall(require, "plugins.config.aerial")
+pcall(require, "plugins.config.harpoon")
+pcall(require, "plugins.config.dap")
+pcall(require, "plugins.config.dap-ui")
 
 return {}
