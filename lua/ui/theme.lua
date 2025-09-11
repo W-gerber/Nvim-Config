@@ -64,6 +64,18 @@ hl('TroubleText', { fg = colors.neon.hotpink })
 hl('IblIndent', { fg = '#2a2e36' })
 hl('IblScope', { fg = colors.neon.purple })
 
+-- Treesitter neon links for consistency
+hl('@comment', { fg = '#7a7f8a', italic = true })
+hl('@string', { fg = colors.neon.lime })
+hl('@keyword', { fg = colors.neon.hotpink })
+hl('@repeat', { fg = colors.neon.hotpink })
+hl('@conditional', { fg = colors.neon.hotpink })
+hl('@function', { fg = '#ffd866' })
+hl('@method', { fg = '#ffd866' })
+hl('@variable', { fg = '#cfe7ff' })
+hl('@parameter', { fg = '#e8f2ff' })
+hl('@property', { fg = '#e8f2ff' })
+
 -- Alpha dashboard specific highlights
 hl('AlphaHeader', { fg = colors.neon.cyan, bold = true })
 hl('AlphaButtons', { fg = colors.neon.hotpink })
