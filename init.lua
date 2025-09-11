@@ -26,6 +26,7 @@ require("plugins.init")
 
 -- UI (themes/highlights) applied after plugins to ensure color groups exist
 pcall(require, "ui.theme")
+pcall(require, "ui.neon_vomit")
 
 -- Helpful message with enhanced styling
 vim.api.nvim_create_autocmd("VimEnter", {

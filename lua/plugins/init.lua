@@ -84,7 +84,13 @@ local plugins = {
   { 'mfussenegger/nvim-jdtls', ft = 'java' },
 
   -- Visual enhancements
-  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', event = 'BufReadPost', opts = {} },
+  { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', event = 'BufReadPost',
+    opts = {
+      indent = { char = '┊' },
+      scope = { enabled = true },
+    }
+  },
+  { 'HiPhish/rainbow-delimiters.nvim', event = { 'BufReadPost', 'BufNewFile' } },
   { 'karb94/neoscroll.nvim', event = 'BufReadPost' },
   { 'windwp/nvim-autopairs', event = 'InsertEnter' },
   { 'rcarriga/nvim-notify' },
@@ -167,5 +173,6 @@ pcall(require, "plugins.config.aerial")
 pcall(require, "plugins.config.harpoon")
 pcall(require, "plugins.config.dap")
 pcall(require, "plugins.config.dap-ui")
+pcall(require, "plugins.config.rainbow-delimiters")
 
 return {}
