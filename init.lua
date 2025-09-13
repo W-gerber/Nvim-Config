@@ -28,17 +28,26 @@ require("plugins.init")
 pcall(require, "ui.theme")
 pcall(require, "ui.neon_vomit")
 
--- Helpful message with enhanced styling
+  -- Friendly greeter notification (transparent bg, yellow text via notify highlights)
 vim.api.nvim_create_autocmd("VimEnter", {
   once = true,
   callback = function()
     -- Only show message if not opening with files
     if vim.fn.argc() == 0 then
       vim.defer_fn(function()
-        vim.notify(" Tokyo Neon Skyline IDE loaded successfully! ", vim.log.levels.INFO, {
-          title = "Neovim Ready",
-          timeout = 3000,
-        })
+          -- Rotate user-provided messages for the greeter
+          local user = os.getenv('USERNAME') or os.getenv('USER') or 'user'
+          local variants = {
+            string.format("Welcome back, %s. The terminal missed your chaos. 🚀", user),
+            "Breathe in, breathe out... now let’s write some bugs. 🧘‍♂️💻",
+            "Remember: git commit > self doubt. Let’s code. ✅",
+            "01101000 01100101 01111001 ... oh, just ‘hey’. 👾",
+          }
+
+          -- Deterministic-ish rotation per minute to avoid repeating on the same session
+          local idx = (tonumber(os.date('%M')) or 0) % #variants + 1
+          local msg = variants[idx]
+          vim.notify(msg, vim.log.levels.INFO, { title = "Welcome", timeout = 2800 })
       end, 1000)
     end
   end,

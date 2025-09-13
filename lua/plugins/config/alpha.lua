@@ -116,7 +116,7 @@ dashboard.section.buttons.val = {
   dashboard.button('p', '󰙅  Project Tree', '<cmd>Neotree toggle<CR>'),
   dashboard.button('-', '', ''), -- visual separator (noop)
   dashboard.button('w', '  Workspaces', '<cmd>Telescope projects<CR>'),
-  dashboard.button('O', '󰝰  Open Folder', ':lua OpenFolderDialog()<CR>'),
+  dashboard.button('a', '󰝰  Open Folder', ':lua OpenFolderDialog()<CR>'),
   dashboard.button('d', '󰇄  Desktop', ':lua OpenDesktop()<CR>'),
   dashboard.button('x', '󰓎  Everything', ':lua OpenEverything()<CR>'),
   dashboard.button('s', '󰦛  Sessions', '<cmd>SessionManager load_session<CR>'),
