@@ -1,0 +1,595 @@
+
+sourcing "nvim_exec2()"
+finished sourcing nvim_exec2()
+sourcing "C:\Program Files\Neovim\share\nvim\runtime\ftplugin.vim"
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\ftplugin.vim
+sourcing "C:\Program Files\Neovim\share\nvim\runtime\indent.vim"
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\indent.vim
+sourcing "c:\Users\wgerb\AppData\Local\nvim\init.lua"
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/filetype.lua"
+line 0: sourcing "nvim_exec2() called at C:\Program Files\Neovim\share/nvim/runtime/filetype.lua:0"
+not found in runtime path: "ftdetect/*.{vim,lua}"
+finished sourcing nvim_exec2() called at C:\Program Files\Neovim\share/nvim/runtime/filetype.lua:0
+continuing in C:\Program Files\Neovim\share/nvim/runtime/filetype.lua
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/filetype.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-treesitter/plugin/nvim-treesitter.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-treesitter/plugin/nvim-treesitter.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/mason-tool-installer.nvim/plugin/mason-tool-installer.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/mason-tool-installer.nvim/plugin/mason-tool-installer.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+not found in runtime path: "lsp/pylsp.lua"
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-lspconfig/plugin/lspconfig.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-lspconfig/plugin/lspconfig.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/plenary.nvim/plugin/plenary.vim"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/plenary.nvim/plugin/plenary.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-web-devicons/plugin/nvim-web-devicons.vim"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-web-devicons/plugin/nvim-web-devicons.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/neo-tree.nvim/plugin/neo-tree.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/neo-tree.nvim/plugin/neo-tree.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/telescope.nvim/plugin/telescope.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/telescope.nvim/plugin/telescope.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-treesitter-context/plugin/treesitter-context.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-treesitter-context/plugin/treesitter-context.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/rainbow-delimiters.nvim/plugin/rainbow-delimiters.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/rainbow-delimiters.nvim/plugin/rainbow-delimiters.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/LuaSnip/plugin/luasnip.lua"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/LuaSnip/plugin/luasnip.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/LuaSnip/plugin/luasnip.vim"
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/LuaSnip/plugin/luasnip.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-cmp/plugin/cmp.lua"
+line 0: sourcing "nvim_exec2() called at C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-cmp/plugin/cmp.lua:0"
+finished sourcing nvim_exec2() called at C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-cmp/plugin/cmp.lua:0
+continuing in C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-cmp/plugin/cmp.lua
+finished sourcing C:/Users/wgerb/AppData/Local/nvim-data/lazy/nvim-cmp/plugin/cmp.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+not found in runtime path: "package.json"
+not found in runtime path: "package.jsonc"
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/editorconfig.lua"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/editorconfig.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/gzip.vim"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/gzip.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/man.lua"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/man.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/matchit.vim"
+not found in 'packpath': "pack/*/start/matchit"
+line 3: sourcing "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\plugin\matchit.vim"
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\plugin\matchit.vim
+continuing in C:\Program Files\Neovim\share/nvim/runtime/plugin/matchit.vim
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/matchit.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/matchparen.vim"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/matchparen.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/netrwPlugin.vim"
+not found in 'packpath': "pack/*/start/netrw"
+line 7: sourcing "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\plugin\netrwPlugin.vim"
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\plugin\netrwPlugin.vim
+continuing in C:\Program Files\Neovim\share/nvim/runtime/plugin/netrwPlugin.vim
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/netrwPlugin.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/osc52.lua"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/osc52.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/rplugin.vim"
+  1: ~\AppData\Local\nvim\vim\_defaults.lua
+  2: C:\Program Files\Neovim\share\nvim\runtime\ftplugin.vim
+  3: C:\Program Files\Neovim\share\nvim\runtime\indent.vim
+  4: ~\AppData\Local\nvim\init.lua
+  5: ~/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/config.lua
+  6: ~/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/view/commands.lua
+  7: ~/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua
+  8: ~/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua
+  9: ~/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/handler/event.lua
+ 10: ~/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/handler/keys.lua
+ 11: ~/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/handler/cmd.lua
+ 12: C:\Program Files\Neovim\share/nvim/runtime/filetype.lua
+ 13: ~/AppData/Local/nvim-data/lazy/nvim-treesitter/plugin/nvim-treesitter.lua
+ 14: C:/Program Files/Neovim/share/nvim/runtime/lua/vim/treesitter/query.lua
+ 15: ~/AppData/Local/nvim-data/lazy/nvim-treesitter/lua/nvim-treesitter/utils.lua
+ 16: ~/AppData/Local/nvim-data/lazy/nvim-treesitter/lua/nvim-treesitter/install.lua
+ 17: ~/AppData/Local/nvim-data/lazy/nvim-treesitter/lua/nvim-treesitter/configs.lua
+ 18: ~/AppData/Local/nvim-data/lazy/mason-tool-installer.nvim/plugin/mason-tool-installer.lua
+ 19: ~/AppData/Local/nvim-data/lazy/mason.nvim/lua/mason/api/command.lua
+ 20: ~/AppData/Local/nvim-data/lazy/mason.nvim/lua/mason/init.lua
+ 21: C:/Program Files/Neovim/share/nvim/runtime/lua/vim/lsp.lua
+ 22: ~/AppData/Local/nvim-data/lazy/mason-lspconfig.nvim/lua/mason-lspconfig/api/command.lua
+ 23: ~/AppData/Local/nvim-data/lazy/toggleterm.nvim/lua/toggleterm/utils.lua
+ 24: ~/AppData/Local/nvim-data/lazy/toggleterm.nvim/lua/toggleterm.lua
+ 25: ~\AppData\Local\nvim/lua/plugins/toggleterm.lua
+ 26: ~/AppData/Local/nvim-data/lazy/window-picker/lua/window-picker/init.lua
+ 27: ~\AppData\Local\nvim/lua/plugins/window_picker.lua
+ 28: ~/AppData/Local/nvim-data/lazy/noice.nvim/lua/noice/init.lua
+ 29: ~/AppData/Local/nvim-data/lazy/nvim-lspconfig/plugin/lspconfig.lua
+ 30: ~\AppData\Local\nvim/lua/plugins/lspconfig.lua
+ 31: ~/AppData/Local/nvim-data/lazy/plenary.nvim/plugin/plenary.vim
+ 32: ~/AppData/Local/nvim-data/lazy/nvim-web-devicons/plugin/nvim-web-devicons.vim
+ 33: ~/AppData/Local/nvim-data/lazy/neo-tree.nvim/plugin/neo-tree.lua
+ 34: ~\AppData\Local\nvim/lua/plugins/neo_tree.lua
+ 35: ~/AppData/Local/nvim-data/lazy/telescope.nvim/plugin/telescope.lua
+ 36: ~\AppData\Local\nvim/lua/plugins/telescope.lua
+ 37: ~\AppData\Local\nvim/lua/plugins/indent_blankline.lua
+ 38: ~/AppData/Local/nvim-data/lazy/indent-blankline.nvim/lua/ibl/highlights.lua
+ 39: ~/AppData/Local/nvim-data/lazy/indent-blankline.nvim/lua/ibl/autocmds.lua
+ 40: ~/AppData/Local/nvim-data/lazy/alpha-nvim/lua/alpha.lua
+ 41: ~/AppData/Local/nvim-data/lazy/nvim-treesitter-context/plugin/treesitter-context.lua
+ 42: ~/AppData/Local/nvim-data/lazy/nvim-treesitter-context/lua/treesitter-context.lua
+ 43: ~/AppData/Local/nvim-data/lazy/rainbow-delimiters.nvim/plugin/rainbow-delimiters.lua
+ 44: ~\AppData\Local\nvim/lua/plugins/rainbow_delimiters.lua
+ 45: ~/AppData/Local/nvim-data/lazy/smear-cursor.nvim/lua/smear_cursor/color.lua
+ 46: ~/AppData/Local/nvim-data/lazy/smear-cursor.nvim/lua/smear_cursor/events.lua
+ 47: ~/AppData/Local/nvim-data/lazy/smear-cursor.nvim/lua/smear_cursor/init.lua
+ 48: ~/AppData/Local/nvim-data/lazy/LuaSnip/plugin/luasnip.lua
+ 49: ~/AppData/Local/nvim-data/lazy/LuaSnip/lua/luasnip/config.lua
+ 50: ~/AppData/Local/nvim-data/lazy/LuaSnip/plugin/luasnip.vim
+ 51: ~/AppData/Local/nvim-data/lazy/nvim-cmp/plugin/cmp.lua
+ 52: ~/AppData/Local/nvim-data/lazy/nvim-cmp/lua/cmp/utils/autocmd.lua
+ 53: ~/AppData/Local/nvim-data/lazy/nvim-cmp/lua/cmp/utils/highlight.lua
+ 54: ~/AppData/Local/nvim-data/lazy/nvim-cmp/lua/cmp/utils/async.lua
+ 55: ~/AppData/Local/nvim-data/lazy/copilot-cmp/lua/copilot_cmp/init.lua
+ 56: ~/AppData/Local/nvim-data/lazy/LuaSnip/lua/luasnip/loaders/fs_watchers.lua
+ 57: ~\AppData\Local\nvim/lua/plugins/cmp.lua
+ 58: C:\Program Files\Neovim\share/nvim/runtime/plugin/editorconfig.lua
+ 59: C:\Program Files\Neovim\share/nvim/runtime/plugin/gzip.vim
+ 60: C:\Program Files\Neovim\share/nvim/runtime/plugin/man.lua
+ 61: C:\Program Files\Neovim\share/nvim/runtime/plugin/matchit.vim
+ 62: C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\plugin\matchit.vim
+ 63: C:\Program Files\Neovim\share/nvim/runtime/plugin/matchparen.vim
+ 64: C:\Program Files\Neovim\share/nvim/runtime/plugin/netrwPlugin.vim
+ 65: C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\plugin\netrwPlugin.vim
+ 66: C:\Program Files\Neovim\share/nvim/runtime/plugin/osc52.lua
+ 67: C:\Program Files\Neovim\share/nvim/runtime/plugin/rplugin.vim
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/rplugin.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/shada.vim"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/shada.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/spellfile.vim"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/spellfile.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/tarPlugin.vim"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/tarPlugin.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/tohtml.lua"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/tohtml.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/tutor.vim"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/tutor.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Program Files\Neovim\share/nvim/runtime/plugin/zipPlugin.vim"
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/plugin/zipPlugin.vim
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp_luasnip\after/plugin/cmp_luasnip.lua"
+finished sourcing C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp_luasnip\after/plugin/cmp_luasnip.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-cmdline\after/plugin/cmp_cmdline.lua"
+finished sourcing C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-cmdline\after/plugin/cmp_cmdline.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-path\after/plugin/cmp_path.lua"
+finished sourcing C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-path\after/plugin/cmp_path.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-buffer\after/plugin/cmp_buffer.lua"
+finished sourcing C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-buffer\after/plugin/cmp_buffer.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Users\wgerb\AppData\Local\nvim-data\lazy\indent-blankline.nvim\after/plugin/commands.lua"
+finished sourcing C:\Users\wgerb\AppData\Local\nvim-data\lazy\indent-blankline.nvim\after/plugin/commands.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+line 1: sourcing "C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-nvim-lsp\after/plugin/cmp_nvim_lsp.lua"
+finished sourcing C:\Users\wgerb\AppData\Local\nvim-data\lazy\cmp-nvim-lsp\after/plugin/cmp_nvim_lsp.lua
+continuing in nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+not found in runtime path: "lua/lualine/components/%=.lua"
+not found in runtime path: "lua/lualine/components/%=/init.lua"
+not found in runtime path: "lua/lualine/components/branch.lua"
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+--- Autocommands ---
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+--- Autocommands ---
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+line 0: sourcing "nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0"
+finished sourcing nvim_exec2() called at c:\Users\wgerb\AppData\Local\nvim\init.lua:0
+continuing in c:\Users\wgerb\AppData\Local\nvim\init.lua
+finished sourcing c:\Users\wgerb\AppData\Local\nvim\init.lua
+sourcing "C:\Program Files\Neovim\share\nvim\runtime\filetype.lua"
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\filetype.lua
+sourcing "C:\Program Files\Neovim\share/nvim/runtime/syntax/syntax.vim"
+line 20: sourcing "C:\Program Files\Neovim\share\nvim\runtime\syntax\synload.vim"
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\syntax\synload.vim
+continuing in C:\Program Files\Neovim\share/nvim/runtime/syntax/syntax.vim
+finished sourcing C:\Program Files\Neovim\share/nvim/runtime/syntax/syntax.vim
+line 0: sourcing "nvim_exec2() called at BufEnter Autocommands for "*":0"
+finished sourcing nvim_exec2() called at BufEnter Autocommands for "*":0
+continuing in BufEnter Autocommands for "*"
+line 0: sourcing "nvim_exec2() called at command line:0"
+not found in runtime path: "colors/neon_commit.*"
+not found in 'packpath': "colors/neon_commit.*"
+not found in 'packpath': "colors/neon_commit.*"
+finished sourcing nvim_exec2() called at command line:0
+continuing in command line
+line 0: sourcing "nvim_exec2() called at command line:0"
+finished sourcing nvim_exec2() called at command line:0
+continuing in command line
+line 0: sourcing "nvim_exec2() called at command line:0"
+finished sourcing nvim_exec2() called at command line:0
+continuing in command line

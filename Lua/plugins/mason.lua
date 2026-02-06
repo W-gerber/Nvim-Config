@@ -1,0 +1,27 @@
+return {
+  "williamboman/mason.nvim",
+  build = ":MasonUpdate",
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  },
+  config = function()
+    require("mason").setup()
+
+    require("mason-lspconfig").setup({
+      ensure_installed = {
+        "jdtls",
+      },
+      automatic_installation = true,
+    })
+
+    require("mason-tool-installer").setup({
+      ensure_installed = {
+        "jdtls",
+        "google-java-format",
+      },
+      auto_update = false,
+      run_on_start = true,
+    })
+  end,
+}
