@@ -1,0 +1,30 @@
+# Neovim runtime files
+build/
+.nvim/
+
+# Log files
+*.log
+*-headless.log
+$log
+
+# Test and validation files
+_neotree_theme_test.txt
+nvim_validate
+
+# Plugin data (managed by lazy.nvim)
+plugin/
+lazy-lock.json
+
+# Session files
+session/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.swp
+*.swo
+*~
