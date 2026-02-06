@@ -14,18 +14,13 @@
 
 ---
 
-## 📸 Screenshots
+## 📸 Preview
 
 <div align="center">
 
-### Dashboard
-![Dashboard](https://via.placeholder.com/800x450/1a1b26/c0caf5?text=Dashboard+Screenshot)
+![Nvim Dashboard](https://raw.githubusercontent.com/W-gerber/Nvim-Config/main/screenshots/dashboard.png)
 
-### Editor View
-![Editor](https://via.placeholder.com/800x450/1a1b26/c0caf5?text=Editor+Screenshot)
-
-### Theme Picker
-![Themes](https://via.placeholder.com/800x450/1a1b26/c0caf5?text=Theme+Picker+Screenshot)
+*Dashboard with Neon Commit theme - 45 plugins loaded in 0.08ms*
 
 </div>
 
