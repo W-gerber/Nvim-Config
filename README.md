@@ -2,13 +2,13 @@
 
 # Nvim-Config
 
-**A modern, modular Neovim configuration with dynamic themes and AI-powered coding**
+
 
 [![Neovim](https://img.shields.io/badge/Neovim-0.9+-green.svg?style=flat-square&logo=neovim)](https://neovim.io)
 [![Lua](https://img.shields.io/badge/Lua-5.1+-purple.svg?style=flat-square&logo=lua)](https://www.lua.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-[Features](#-features) • [Install](#-installation) • [Keybindings](#%EF%B8%8F-keybindings) • [Themes](#-themes)
+
 
 </div>
 
@@ -32,7 +32,7 @@
 
 ## Features
 <details>
-<summary> Core Features (click to expand)</summary>
+<summary> Core Features </summary>
   
 -  **Dynamic Theme Switcher** - Live preview with persistent state
 -  **GitHub Copilot** - AI-powered completion and chat
@@ -45,14 +45,14 @@
 -  **Windows Optimized** - Native folder dialogs and integrations
 
 </details>
----
+
 
 
 
 ## Included Plugins
 
 <details>
-<summary> Core Plugins (click to expand)</summary>
+<summary> Core Plugins </summary>
 
 - **Plugin Manager:** lazy.nvim
 - **LSP:** nvim-lspconfig, Mason
@@ -69,17 +69,8 @@
 
 ---
 
-
-##  License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
----
-
 <div align="center">
 
 **⭐ Star this repo if you find it helpful!**
-
-Made with ❤️ for the Neovim community
 
 </div>
