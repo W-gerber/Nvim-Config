@@ -23,7 +23,7 @@
 
 
 </div>
----
+
 ## Cheat Sheet
 
 ![Nvim Dashboard](https://raw.githubusercontent.com/W-gerber/Nvim-Config/main/screenshots/Cheatsheet.png)
