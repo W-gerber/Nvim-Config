@@ -21,12 +21,19 @@
 ![Nvim Dashboard](https://raw.githubusercontent.com/W-gerber/Nvim-Config/main/screenshots/dashboard.png)
 ![Nvim Dashboard](https://raw.githubusercontent.com/W-gerber/Nvim-Config/main/screenshots/dashboard1.png)
 
+
 </div>
+---
+## Cheat Sheet
+
+![Nvim Dashboard](https://raw.githubusercontent.com/W-gerber/Nvim-Config/main/screenshots/Cheatsheet.png)
 
 ---
 
-## ✨ Features
-
+## Features
+<details>
+<summary> Core Features (click to expand)</summary>
+  
 -  **Dynamic Theme Switcher** - Live preview with persistent state
 -  **GitHub Copilot** - AI-powered completion and chat
 -  **Blazing Fast** - Lazy loading with 40-60ms startup time
@@ -37,14 +44,15 @@
 -  **Treesitter** - Advanced syntax highlighting
 -  **Windows Optimized** - Native folder dialogs and integrations
 
+</details>
 ---
 
 
 
-## 📦 Included Plugins
+## Included Plugins
 
 <details>
-<summary>🔌 Core Plugins (click to expand)</summary>
+<summary> Core Plugins (click to expand)</summary>
 
 - **Plugin Manager:** lazy.nvim
 - **LSP:** nvim-lspconfig, Mason
@@ -62,18 +70,9 @@
 ---
 
 
-## 📄 License
+##  License
 
 MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-## 💬 Support
-
-- 🐛 [Issues](https://github.com/W-gerber/Nvim-Config/issues)
-- 💡 [Discussions](https://github.com/W-gerber/Nvim-Config/discussions)
-- 📖 [Neovim Docs](https://neovim.io/doc/)
-- 💬 [r/neovim](https://reddit.com/r/neovim)
 
 ---
 
