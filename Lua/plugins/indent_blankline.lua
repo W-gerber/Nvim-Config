@@ -42,7 +42,9 @@ return {
 
     require("ibl").setup(opts)
 
+    local ibl_group = vim.api.nvim_create_augroup("IblHighlights", { clear = true })
     vim.api.nvim_create_autocmd("ColorScheme", {
+      group = ibl_group,
       callback = function()
         vim.api.nvim_set_hl(0, "IblIndent", { link = "LineNr" })
         vim.api.nvim_set_hl(0, "IblScope", { link = "CursorLineNr" })

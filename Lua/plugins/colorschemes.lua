@@ -5,7 +5,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
-    lazy = false,
+    lazy = true,
     priority = 900,
     config = function()
       pcall(function()
@@ -19,7 +19,7 @@ return {
   },
   {
     "olimorris/onedarkpro.nvim",
-    lazy = false,
+    lazy = true,
     priority = 900,
     config = function()
       pcall(function()
@@ -30,7 +30,7 @@ return {
   {
     "everviolet/nvim",
     name = "evergarden",
-    lazy = false,
+    lazy = true,
     priority = 900,
     opts = {
       theme = {
@@ -57,7 +57,7 @@ return {
   },
   {
     "ribru17/bamboo.nvim",
-    lazy = false,
+    lazy = true,
     priority = 900,
     config = function()
       pcall(function()
@@ -67,12 +67,12 @@ return {
   },
   {
     "yorumicolors/yorumi.nvim",
-    lazy = false,
+    lazy = true,
     priority = 900,
   },
   {
     "b0o/lavi.nvim",
-    lazy = false,
+    lazy = true,
     priority = 900,
   },
 }

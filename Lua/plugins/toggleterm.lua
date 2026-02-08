@@ -1,11 +1,15 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
+  cmd = { "ToggleTerm", "TermExec" },
+  keys = {
+    { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+    { [[<c-\>]], "<cmd>ToggleTerm<cr>", desc = "Toggle terminal", mode = { "n", "t" } },
+  },
   config = function()
     require("toggleterm").setup({
-      open_mapping = [[<c-\>]],
-      insert_mappings = true,
-      terminal_mappings = true,
+      insert_mappings = false,  -- we handle mappings via keys above
+      terminal_mappings = false,
       start_in_insert = true,
       persist_mode = true,
       persist_size = true,
@@ -13,8 +17,5 @@ return {
       direction = "horizontal",
       size = 15,
     })
-
-    vim.keymap.set("n", "<leader>to", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
-    vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
   end,
 }

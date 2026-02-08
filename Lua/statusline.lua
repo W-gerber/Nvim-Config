@@ -72,11 +72,18 @@ require('lualine').setup {
   extensions = {},
 }
 
--- Ensure transparency
-vim.cmd("hi StatusLine guibg=NONE guifg=" .. colors.white)
-vim.cmd("hi StatusLineNC guibg=NONE guifg=" .. colors.grey)
-vim.cmd("hi LualineNormal guibg=NONE")
-vim.cmd("hi LualineInsert guibg=NONE")
-vim.cmd("hi LualineVisual guibg=NONE")
+-- Ensure transparency (reapplied on ColorScheme)
+local function apply_statusline_transparency()
+  vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = colors.white })
+  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = colors.grey })
+end
+
+apply_statusline_transparency()
+
+local sl_group = vim.api.nvim_create_augroup("StatuslineTransparency", { clear = true })
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = sl_group,
+  callback = apply_statusline_transparency,
+})
 vim.cmd("hi LualineReplace guibg=NONE")
 vim.cmd("hi LualineCommand guibg=NONE")

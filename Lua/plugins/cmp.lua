@@ -31,7 +31,6 @@ return {
 
     local ok_lspkind, lspkind = pcall(require, "lspkind")
     local ok_luasnip, luasnip = pcall(require, "luasnip")
-    local cmp_types_ok, cmp_types = pcall(require, "cmp.types")
 
     -- Setup LuaSnip if available
     if ok_luasnip then
@@ -109,9 +108,7 @@ return {
           end
 
           -- Optional: add Lua docs link for builtins when LSP doesn't provide one.
-          -- We keep this minimal and non-intrusive: it will appear in the docs window via LSP docs,
-          -- but if LSP docs are empty, we can still provide a hint.
-          if cmp_types_ok and entry and entry.source and entry.source.name == "nvim_lsp" then
+          if entry and entry.source and entry.source.name == "nvim_lsp" then
             -- no-op; LSP handles documentation
           end
 
@@ -172,24 +169,28 @@ return {
       },
     })
 
+    -- Shared bordered window configs (avoids repeating in cmdline setups)
+    local bordered_completion = cmp.config.window.bordered({
+      border = "rounded",
+      winhighlight = "Normal:CmpNormal,FloatBorder:CmpBorder,CursorLine:CmpSelection,Search:None",
+      scrollbar = true,
+      col_offset = -1,
+      side_padding = 1,
+    })
+    local bordered_documentation = cmp.config.window.bordered({
+      border = "rounded",
+      winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpDocBorder",
+      max_height = 15,
+      max_width = 80,
+      col_offset = 1,
+      side_padding = 1,
+    })
+
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       window = {
-        completion = cmp.config.window.bordered({
-          border = "rounded",
-          winhighlight = "Normal:CmpNormal,FloatBorder:CmpBorder,CursorLine:CmpSelection,Search:None",
-          scrollbar = true,
-          col_offset = -1,
-          side_padding = 1,
-        }),
-        documentation = cmp.config.window.bordered({
-          border = "rounded",
-          winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpDocBorder",
-          max_height = 15,
-          max_width = 80,
-          col_offset = 1,
-          side_padding = 1,
-        }),
+        completion = bordered_completion,
+        documentation = bordered_documentation,
       },
       sources = {
         { name = "path" },
@@ -202,21 +203,8 @@ return {
     cmp.setup.cmdline("/", {
       mapping = cmp.mapping.preset.cmdline(),
       window = {
-        completion = cmp.config.window.bordered({
-          border = "rounded",
-          winhighlight = "Normal:CmpNormal,FloatBorder:CmpBorder,CursorLine:CmpSelection,Search:None",
-          scrollbar = true,
-          col_offset = -1,
-          side_padding = 1,
-        }),
-        documentation = cmp.config.window.bordered({
-          border = "rounded",
-          winhighlight = "Normal:CmpDocNormal,FloatBorder:CmpDocBorder",
-          max_height = 15,
-          max_width = 80,
-          col_offset = 1,
-          side_padding = 1,
-        }),
+        completion = bordered_completion,
+        documentation = bordered_documentation,
       },
       sources = {
         { name = "buffer" },
@@ -318,7 +306,9 @@ return {
     setup_cmp_highlights()
 
     -- Re-apply highlights when theme changes
+    local cmp_hl_group = vim.api.nvim_create_augroup("CmpHighlights", { clear = true })
     vim.api.nvim_create_autocmd("ColorScheme", {
+      group = cmp_hl_group,
       callback = setup_cmp_highlights,
     })
   end,

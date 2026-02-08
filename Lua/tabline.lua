@@ -326,9 +326,7 @@ function _G.CustomBufferTabline()
   -- Build buffer pills
   local cfg = M._config or defaults
 
-  -- Make the right-side pill match the statusline “mode bubble” color.
-  -- This is cheap enough and guarantees it stays in sync when mode changes.
-  setup_highlights(cfg)
+
   for i, bufnr in ipairs(buffers) do
     local is_current = (bufnr == current_buf)
     s = s .. buffer_pill(cfg, bufnr, i, is_current)
@@ -383,24 +381,7 @@ function M.prev()
 end
 
 local function safe_bufdelete(bufnr, force)
-  if not vim.api.nvim_buf_is_valid(bufnr) then
-    return
-  end
-
-  local windows = vim.fn.win_findbuf(bufnr)
-  for _, win in ipairs(windows) do
-    if vim.api.nvim_win_is_valid(win) then
-      local alt = vim.fn.bufnr("#")
-      if alt > 0 and vim.api.nvim_buf_is_valid(alt) and vim.bo[alt].buflisted then
-        pcall(vim.api.nvim_win_set_buf, win, alt)
-      else
-        local scratch = vim.api.nvim_create_buf(true, false)
-        pcall(vim.api.nvim_win_set_buf, win, scratch)
-      end
-    end
-  end
-
-  pcall(vim.api.nvim_buf_delete, bufnr, { force = force or false })
+  require("core.utils").safe_bufdelete(bufnr, force)
 end
 
 -- Setup function
@@ -456,6 +437,15 @@ function M.setup(opts)
     end,
   })
 
+  -- Re-apply mode-colored highlights when mode changes (keeps status pill in sync)
+  vim.api.nvim_create_autocmd("ModeChanged", {
+    group = group,
+    callback = function()
+      setup_highlights(M._config or defaults)
+      vim.cmd("redrawtabline")
+    end,
+  })
+
   -- Update time every 10 seconds
   if M._timer then
     pcall(function()
@@ -465,7 +455,7 @@ function M.setup(opts)
     M._timer = nil
   end
 
-  M._timer = vim.loop.new_timer()
+  M._timer = vim.uv.new_timer()
   M._timer:start(10000, 10000, vim.schedule_wrap(function()
     vim.cmd("redrawtabline")
   end))

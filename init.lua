@@ -9,29 +9,8 @@ vim.g.mapleader = " "
 -- =========================
 -- Buffer / file shortcuts
 -- =========================
-local function safe_bufdelete(bufnr, force)
-  if not vim.api.nvim_buf_is_valid(bufnr) then
-    return
-  end
-
-  local windows = vim.fn.win_findbuf(bufnr)
-  for _, win in ipairs(windows) do
-    if vim.api.nvim_win_is_valid(win) then
-      local alt = vim.fn.bufnr("#")
-      if alt > 0 and vim.api.nvim_buf_is_valid(alt) and vim.bo[alt].buflisted then
-        pcall(vim.api.nvim_win_set_buf, win, alt)
-      else
-        local scratch = vim.api.nvim_create_buf(true, false)
-        pcall(vim.api.nvim_win_set_buf, win, scratch)
-      end
-    end
-  end
-
-  local ok = pcall(vim.api.nvim_buf_delete, bufnr, { force = force or false })
-  if not ok then
-    vim.notify("Could not close buffer (unsaved changes?)", vim.log.levels.WARN)
-  end
-end
+local utils = require("core.utils")
+local safe_bufdelete = utils.safe_bufdelete
 
 local function close_current_buffer(force)
   safe_bufdelete(vim.api.nvim_get_current_buf(), force)
@@ -83,10 +62,6 @@ do
   end
 end
 
--- Some bufferline/tabline plugins still expect this legacy global to exist.
--- Keeping it defined avoids startup errors in newer Neovim versions.
-vim.g.bufferline = vim.g.bufferline or {}
-
 -- Basic options
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -94,6 +69,20 @@ vim.opt.termguicolors = true
 vim.o.showmode = false
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- Essential options for a polished experience
+vim.opt.undofile = true              -- persistent undo across sessions
+vim.opt.clipboard = "unnamedplus"    -- system clipboard integration
+vim.opt.ignorecase = true            -- case-insensitive search...
+vim.opt.smartcase = true             -- ...unless uppercase is typed
+vim.opt.signcolumn = "yes"           -- prevent layout shift from diagnostics
+vim.opt.scrolloff = 8                -- keep 8 lines visible above/below cursor
+vim.opt.sidescrolloff = 8            -- keep 8 cols visible left/right
+vim.opt.updatetime = 250             -- faster CursorHold (default 4000ms)
+vim.opt.timeoutlen = 300             -- faster keymap sequences
+vim.opt.cursorline = true            -- highlight current line
+vim.opt.wrap = false                 -- no line wrapping by default
+vim.opt.mouse = "a"                  -- enable mouse in all modes
 
 -- Indentation (fix misaligned starts like `private`)
 -- Use spaces by default so columns line up consistently.
@@ -105,7 +94,9 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 -- Filetype overrides
+local ft_group = vim.api.nvim_create_augroup("UserFiletypeOverrides", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
+  group = ft_group,
   pattern = { "java" },
   callback = function()
     vim.bo.expandtab = true
@@ -130,7 +121,7 @@ end
 -- Lazy.nvim bootstrap
 -- =========================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     "git",
     "clone",
@@ -167,7 +158,4 @@ end)
 
 -- Keymap: <leader>q closes the current window (split)
 vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = "Close current window" })
-
-
-
 

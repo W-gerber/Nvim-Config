@@ -56,6 +56,9 @@ M.base_16 = {
 
 M.type = "dark"
 
-M = require("base46").override_theme(M, "neon_commit")
+local ok_base46, base46 = pcall(require, "base46")
+if ok_base46 then
+  M = base46.override_theme(M, "neon_commit")
+end
 
 return M

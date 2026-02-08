@@ -11,13 +11,13 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "jdtls",
+        "lua_ls",
       },
       automatic_installation = true,
     })
 
     require("mason-tool-installer").setup({
       ensure_installed = {
-        "jdtls",
         "google-java-format",
       },
       auto_update = false,

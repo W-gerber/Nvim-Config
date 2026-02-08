@@ -1,6 +1,5 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
-  event = "VeryLazy",
   cmd = {
     "CopilotChat",
     "CopilotChatOpen",
@@ -75,7 +74,9 @@ return {
     hl_link("CopilotChatUri", "Underlined")
     hl_link("CopilotChatAnnotation", "Comment")
 
+    local copilot_chat_group = vim.api.nvim_create_augroup("CopilotChatBuf", { clear = true })
     vim.api.nvim_create_autocmd("BufEnter", {
+      group = copilot_chat_group,
       pattern = "copilot-*",
       callback = function()
         vim.opt_local.number = false

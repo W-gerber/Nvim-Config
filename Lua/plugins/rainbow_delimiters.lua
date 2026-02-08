@@ -41,7 +41,9 @@ return {
     }
 
     -- Re-apply links on colorscheme changes
+    local rainbow_group = vim.api.nvim_create_augroup("RainbowDelimiterHighlights", { clear = true })
     vim.api.nvim_create_autocmd("ColorScheme", {
+      group = rainbow_group,
       callback = function()
         hl(0, "RainbowDelimiterRed", { link = "DiagnosticError" })
         hl(0, "RainbowDelimiterYellow", { link = "DiagnosticWarn" })

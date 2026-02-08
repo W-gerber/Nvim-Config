@@ -1,6 +1,11 @@
 return {
   "Shatur/neovim-session-manager",
-  event = "VimEnter",
+  cmd = { "SessionManager" },
+  keys = {
+    { "<leader>sl", "<cmd>SessionManager load_session<cr>", desc = "Load session" },
+    { "<leader>ss", "<cmd>SessionManager save_current_session<cr>", desc = "Save session" },
+    { "<leader>sd", "<cmd>SessionManager delete_session<cr>", desc = "Delete session" },
+  },
   config = function()
     local config = require('session_manager.config')
     require('session_manager').setup({
