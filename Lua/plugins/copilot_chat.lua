@@ -23,7 +23,16 @@ return {
     { "<leader>cm", "<cmd>CopilotChatModels<cr>", desc = "Copilot Chat: models", mode = "n" },
     { "<leader>cA", "<cmd>CopilotChatAgent<cr>", desc = "Copilot Chat: agent mode", mode = "n" },
     {
-      "<leader>ca",
+      "<leader>cg",
+      function()
+        local chat = require("CopilotChat")
+        chat.open({ prompt = "/Agent" })
+      end,
+      desc = "Copilot Chat: open agent",
+      mode = "n",
+    },
+    {
+      "<leader>cq",
       function()
         local input = vim.fn.input("Copilot ask (buffer): ")
         if input == nil or input == "" then

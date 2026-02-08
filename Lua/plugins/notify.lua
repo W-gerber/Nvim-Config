@@ -1,6 +1,6 @@
 return {
   "rcarriga/nvim-notify",
-  lazy = true,
+  event = "VeryLazy",
   opts = {
     -- Used as the color for 100% transparency. Fixes:
     -- "Highlight group 'NotifyBackground' has no background highlight"

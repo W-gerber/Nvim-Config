@@ -2,6 +2,7 @@ return {
   -- Sticky context header (VS Code-like):
   -- Keeps the current function/class/if/loop context visible at the top while scrolling.
   "nvim-treesitter/nvim-treesitter-context",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   opts = {
     enable = true,

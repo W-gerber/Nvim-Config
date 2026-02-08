@@ -5,6 +5,7 @@ return {
   -- - Highlight the current scope subtly
   -- - Do NOT clutter empty lines
   "lukas-reineke/indent-blankline.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   main = "ibl",
   opts = {
     indent = {

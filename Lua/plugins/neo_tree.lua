@@ -1,6 +1,10 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
+  cmd = "Neotree",
+  keys = {
+    { "<leader>e", function() require("neo-tree.command").execute({ toggle = true, dir = require("core.utils").everything }) end, desc = "Toggle Neo-tree" },
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -59,10 +63,6 @@ return {
         },
       },
     })
-
-    vim.keymap.set("n", "<leader>e", function()
-      require("neo-tree.command").execute({ toggle = true, dir = utils.everything })
-    end, { desc = "Toggle Neo-tree in Everything folder", silent = true, noremap = true })
 
     -- Function to apply neo-tree highlights based on current theme
     local function apply_neotree_highlights()

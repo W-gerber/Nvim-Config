@@ -418,7 +418,7 @@ function M.setup(opts)
       end
     end
   end, { desc = "Close other tabs", silent = true })
-  vim.keymap.set("n", "<C-t>", ":enew<CR>", { desc = "New tab (buffer)", silent = true })
+  vim.keymap.set("n", "<C-t>", "<cmd>enew<CR>", { desc = "New tab (buffer)", silent = true })
 
   -- Refresh tabline on buffer events and time updates (for clock)
   local group = vim.api.nvim_create_augroup("CustomTabline", { clear = true })

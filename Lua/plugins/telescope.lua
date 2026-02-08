@@ -3,8 +3,8 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   cmd = { "Telescope" },
   keys = {
-    { "<leader>ff", desc = "Telescope: Find files" },
-    { "<leader>fg", desc = "Telescope: Live grep" },
+    { "<leader>ff", function() require("telescope.builtin").find_files({ cwd = require("core.utils").everything, hidden = true }) end, desc = "Telescope: Find files" },
+    { "<leader>fg", function() require("telescope.builtin").live_grep({ cwd = require("core.utils").everything }) end, desc = "Telescope: Live grep" },
     { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Telescope: Buffers" },
     { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope: Help tags" },
   },
@@ -52,15 +52,6 @@ return {
         },
       },
     })
-
-    -- Keymaps
-    vim.keymap.set("n", "<leader>ff", function()
-      builtin.find_files({ cwd = utils.everything, hidden = true })
-    end, { desc = "Telescope: Find files in Everything" })
-
-    vim.keymap.set("n", "<leader>fg", function()
-      builtin.live_grep({ cwd = utils.everything })
-    end, { desc = "Telescope: Live grep in Everything" })
 
     -- Theme-aware telescope highlights (re-applied on ColorScheme)
     local function apply_telescope_highlights()

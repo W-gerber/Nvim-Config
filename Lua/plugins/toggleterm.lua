@@ -17,5 +17,8 @@ return {
       direction = "horizontal",
       size = 15,
     })
+
+    -- Escape from terminal insert mode (double-Esc avoids conflicts with TUI apps)
+    vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
   end,
 }

@@ -2,6 +2,7 @@ return {
   -- Treesitter-based rainbow delimiters (VS Code-like bracket colorization)
   -- Nested (), {}, [] get different highlight groups.
   "hiphish/rainbow-delimiters.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     -- Link rainbow groups to existing theme-highlight groups (no hard-coded colors)

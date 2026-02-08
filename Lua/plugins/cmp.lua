@@ -1,5 +1,6 @@
 return {
   "hrsh7th/nvim-cmp",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
@@ -107,11 +108,6 @@ return {
             vim_item.abbr = vim_item.abbr:sub(1, max_abbr - 1) .. "…"
           end
 
-          -- Optional: add Lua docs link for builtins when LSP doesn't provide one.
-          if entry and entry.source and entry.source.name == "nvim_lsp" then
-            -- no-op; LSP handles documentation
-          end
-
           return vim_item
         end,
       },
@@ -165,7 +161,7 @@ return {
       }),
 
       experimental = {
-        ghost_text = true,
+        ghost_text = false,  -- disabled; copilot.lua renders inline suggestions
       },
     })
 
@@ -217,56 +213,42 @@ return {
       local current_theme = theme_switcher_ok and theme_switcher.current_id() or "default"
       local is_neon = current_theme == "neon_commit"
 
+      local hl = vim.api.nvim_set_hl
       if is_neon then
         -- Neon theme: transparent with vibrant highlights
-        vim.cmd [[
-          " Completion window (rounded but borderless-looking)
-          hi CmpNormal              guibg=NONE guifg=#ffffff
-          hi CmpBorder              guibg=NONE guifg=NONE
-          hi CmpSelection           guibg=#1a1a2e guifg=#ffffff gui=NONE
-
-          " Item components
-          hi CmpItemAbbrMatch       guifg=#ff2d95 guibg=NONE gui=bold
-          hi CmpItemAbbrMatchFuzzy  guifg=#ff2d95 guibg=NONE gui=bold
-          hi CmpItemAbbr            guifg=#ffffff guibg=NONE
-          hi CmpItemAbbrDeprecated  guifg=#808080 guibg=NONE gui=strikethrough
-
-          " Kind/Type icons (left side)
-          hi CmpItemKindFunction    guifg=#ff2d95 guibg=NONE
-          hi CmpItemKindMethod      guifg=#ff2d95 guibg=NONE
-          hi CmpItemKindVariable    guifg=#00d7ff guibg=NONE
-          hi CmpItemKindKeyword     guifg=#CFFF04 guibg=NONE
-          hi CmpItemKindClass       guifg=#9d7cff guibg=NONE
-          hi CmpItemKindInterface   guifg=#9d7cff guibg=NONE
-          hi CmpItemKindText        guifg=#ffffff guibg=NONE
-          hi CmpItemKindProperty    guifg=#00d7ff guibg=NONE
-          hi CmpItemKindField       guifg=#00d7ff guibg=NONE
-          hi CmpItemKindConstant    guifg=#ff9e1b guibg=NONE
-          hi CmpItemKindSnippet     guifg=#b7ff3a guibg=NONE
-          hi CmpItemKindModule      guifg=#d6afff guibg=NONE
-          hi CmpItemKindStruct      guifg=#9d7cff guibg=NONE
-          hi CmpItemKindEnum        guifg=#9d7cff guibg=NONE
-          hi CmpItemKindFile        guifg=#1e90ff guibg=NONE
-          hi CmpItemKindFolder      guifg=#1e90ff guibg=NONE
-
-          " Kind label on the right (muted)
-          hi CmpItemMenu            guifg=#808080 guibg=NONE gui=italic
-
-          " Documentation window (rounded but borderless-looking)
-          hi CmpDocNormal           guibg=NONE guifg=#ffffff
-          hi CmpDocBorder           guibg=NONE guifg=NONE
-
-          " Markdown/doc accents
-          hi CmpDocHeader           guifg=#00d7ff guibg=NONE gui=bold
-          hi markdownUrl            guifg=#9d7cff guibg=NONE gui=underline
-          hi markdownLinkText       guifg=#9d7cff guibg=NONE
-
-          " Noice cmdline popup
-          hi NoiceCmdlinePopupText       guifg=#00d7ff guibg=NONE
-          hi NoiceCmdlinePopupBorder     guifg=#ff2d95 guibg=NONE
-          hi NoiceCmdlinePopupPrompt     guifg=#ff2d95 guibg=NONE
-          hi NoiceCmdlinePopupSelection  guifg=#000000 guibg=#ff2d95 gui=bold
-        ]]
+        hl(0, "CmpNormal",             { bg = "NONE", fg = "#ffffff" })
+        hl(0, "CmpBorder",             { bg = "NONE", fg = "NONE" })
+        hl(0, "CmpSelection",          { bg = "#1a1a2e", fg = "#ffffff" })
+        hl(0, "CmpItemAbbrMatch",      { fg = "#ff2d95", bold = true })
+        hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#ff2d95", bold = true })
+        hl(0, "CmpItemAbbr",           { fg = "#ffffff" })
+        hl(0, "CmpItemAbbrDeprecated", { fg = "#808080", strikethrough = true })
+        hl(0, "CmpItemKindFunction",   { fg = "#ff2d95" })
+        hl(0, "CmpItemKindMethod",     { fg = "#ff2d95" })
+        hl(0, "CmpItemKindVariable",   { fg = "#00d7ff" })
+        hl(0, "CmpItemKindKeyword",    { fg = "#CFFF04" })
+        hl(0, "CmpItemKindClass",      { fg = "#9d7cff" })
+        hl(0, "CmpItemKindInterface",  { fg = "#9d7cff" })
+        hl(0, "CmpItemKindText",       { fg = "#ffffff" })
+        hl(0, "CmpItemKindProperty",   { fg = "#00d7ff" })
+        hl(0, "CmpItemKindField",      { fg = "#00d7ff" })
+        hl(0, "CmpItemKindConstant",   { fg = "#ff9e1b" })
+        hl(0, "CmpItemKindSnippet",    { fg = "#b7ff3a" })
+        hl(0, "CmpItemKindModule",     { fg = "#d6afff" })
+        hl(0, "CmpItemKindStruct",     { fg = "#9d7cff" })
+        hl(0, "CmpItemKindEnum",       { fg = "#9d7cff" })
+        hl(0, "CmpItemKindFile",       { fg = "#1e90ff" })
+        hl(0, "CmpItemKindFolder",     { fg = "#1e90ff" })
+        hl(0, "CmpItemMenu",           { fg = "#808080", italic = true })
+        hl(0, "CmpDocNormal",          { bg = "NONE", fg = "#ffffff" })
+        hl(0, "CmpDocBorder",          { bg = "NONE", fg = "NONE" })
+        hl(0, "CmpDocHeader",          { fg = "#00d7ff", bold = true })
+        hl(0, "markdownUrl",           { fg = "#9d7cff", underline = true })
+        hl(0, "markdownLinkText",      { fg = "#9d7cff" })
+        hl(0, "NoiceCmdlinePopupText",      { fg = "#00d7ff" })
+        hl(0, "NoiceCmdlinePopupBorder",    { fg = "#ff2d95" })
+        hl(0, "NoiceCmdlinePopupPrompt",    { fg = "#ff2d95" })
+        hl(0, "NoiceCmdlinePopupSelection", { fg = "#000000", bg = "#ff2d95", bold = true })
       else
         -- Other themes: solid backgrounds with theme-aware colors
         local normal = vim.api.nvim_get_hl(0, { name = "Normal", link = false })

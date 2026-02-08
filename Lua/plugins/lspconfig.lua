@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -62,8 +63,8 @@ return {
         map("n", "<leader>cf", function() vim.lsp.buf.format({ async = true }) end, "LSP: Format")
 
         -- Diagnostics
-        map("n", "[d", vim.diagnostic.goto_prev, "Prev diagnostic")
-        map("n", "]d", vim.diagnostic.goto_next, "Next diagnostic")
+        map("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, "Prev diagnostic")
+        map("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, "Next diagnostic")
         map("n", "<leader>d", vim.diagnostic.open_float, "Diagnostic: float")
       end,
     })

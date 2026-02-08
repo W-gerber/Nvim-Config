@@ -5,7 +5,8 @@ return {
     local dashboard = require("alpha.themes.dashboard")
     local utils = require("core.utils")
 
-    -- Local callbacks (avoid _G pollution) referenced by closures below.
+    -- Alpha keymaps are buffer-local and need a :lua command string, so we
+    -- expose these callbacks as _G with a prefix to keep the namespace tidy.
     local function open_folder_dialog()
       local path = ""
 
@@ -47,6 +48,10 @@ return {
       require("neo-tree.command").execute({ toggle = true, dir = utils.everything })
     end
 
+    _G._alpha_open_folder = open_folder_dialog
+    _G._alpha_open_desktop = open_desktop
+    _G._alpha_open_everything = open_everything
+
     dashboard.section.header.val = {
       "                                                     ",
       "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
@@ -62,9 +67,9 @@ return {
       dashboard.button("e", "  New File", ":ene <BAR> startinsert<CR>"),
       dashboard.button("r", "  Recent Files", ":Telescope oldfiles<CR>"),
       dashboard.button("f", "  Find File", ":Telescope find_files<CR>"),
-      dashboard.button("o", "󰝰  Open Folder", ""),
-      dashboard.button("d", "󰇄  Desktop", ""),
-      dashboard.button("x", "󰓎  Everything", ""),
+      dashboard.button("o", "󰝰  Open Folder", "<cmd>lua _alpha_open_folder()<CR>"),
+      dashboard.button("d", "󰇄  Desktop", "<cmd>lua _alpha_open_desktop()<CR>"),
+      dashboard.button("x", "󰓎  Everything", "<cmd>lua _alpha_open_everything()<CR>"),
       dashboard.button("s", "󰦛  Sessions", "<cmd>SessionManager load_session<CR>"),
       dashboard.button("-", "", ""), -- visual separator
       dashboard.button("c", "  Configuration", "<cmd>e $MYVIMRC | :cd %:p:h<CR>"),
@@ -72,29 +77,34 @@ return {
       dashboard.button("q", "  Quit", ":qa<CR>"),
     }
 
-    -- Wire up callbacks that can't be expressed as simple command strings.
-    dashboard.section.buttons.val[4].on_press = open_folder_dialog
-    dashboard.section.buttons.val[5].on_press = open_desktop
-    dashboard.section.buttons.val[6].on_press = open_everything
-
     -- Deferred footer so lazy.nvim stats are accurate (startup is still running when alpha loads).
     dashboard.section.footer.val = ""
     dashboard.section.footer.opts.hl = "Type"
 
     alpha.setup(dashboard.opts)
 
-    vim.api.nvim_create_autocmd("User", {
-      pattern = "LazyVimStarted",
-      once = true,
-      callback = function()
-        local stats = require("lazy").stats()
-        dashboard.section.footer.val = "⚡ Neovim loaded "
-          .. stats.count
-          .. " plugins in "
-          .. string.format("%.2f", stats.startuptime)
-          .. "ms"
-        pcall(vim.cmd, "redraw")
-      end,
-    })
+    -- Show plugin load stats in the footer once lazy.nvim has finished.
+    local function set_footer()
+      local ok, lazy = pcall(require, "lazy")
+      if not ok then return end
+      local stats = lazy.stats()
+      if stats.startuptime == 0 then return false end -- not ready yet
+      dashboard.section.footer.val = "⚡ Neovim loaded "
+        .. stats.count
+        .. " plugins in "
+        .. string.format("%.2f", stats.startuptime)
+        .. "ms"
+      pcall(function() require("alpha").redraw() end)
+      return true
+    end
+
+    -- Try immediately (event may have already fired), then also listen for it.
+    if not set_footer() then
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "LazyVimStarted",
+        once = true,
+        callback = set_footer,
+      })
+    end
   end,
 }

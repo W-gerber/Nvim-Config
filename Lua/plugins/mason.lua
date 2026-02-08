@@ -1,5 +1,6 @@
 return {
   "williamboman/mason.nvim",
+  cmd = "Mason",
   build = ":MasonUpdate",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
@@ -21,7 +22,7 @@ return {
         "google-java-format",
       },
       auto_update = false,
-      run_on_start = true,
+      run_on_start = false,
     })
   end,
 }

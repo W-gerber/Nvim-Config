@@ -17,7 +17,7 @@ local function close_current_buffer(force)
 end
 
 -- New empty file (buffer)
-vim.keymap.set("n", "<leader>bn", ":enew<CR>", { desc = "New buffer", silent = true })
+vim.keymap.set("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer", silent = true })
 
 -- Close current file (buffer)
 vim.keymap.set("n", "<leader>bc", function()
@@ -147,15 +147,47 @@ pcall(function()
   require("theme_switcher").setup()
 end)
 
-pcall(require, "statusline")
-
--- =========================
--- Custom pill-style tabline
--- =========================
-pcall(function()
-  require("tabline").setup()
-end)
+-- Defer statusline and tabline setup so they don't block initial render.
+-- They load right after the UI is drawn (VeryLazy fires ~10ms after startup).
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  once = true,
+  callback = function()
+    pcall(require, "statusline")
+    pcall(function()
+      require("tabline").setup()
+    end)
+  end,
+})
 
 -- Keymap: <leader>q closes the current window (split)
-vim.keymap.set('n', '<leader>q', ':close<CR>', { desc = "Close current window" })
+vim.keymap.set('n', '<leader>q', '<cmd>close<CR>', { desc = "Close current window", silent = true })
+
+-- Save with Ctrl+S (VS Code habit)
+vim.keymap.set({ "n", "i", "v" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file", silent = true })
+
+-- Escape clears search highlight
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+
+-- Briefly highlight yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("YankHighlight", { clear = true }),
+  callback = function()
+    vim.hl.on_yank({ timeout = 200 })
+  end,
+})
+
+-- Move lines up/down (VS Code Alt+Up/Down)
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move line down", silent = true })
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move line up", silent = true })
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
+
+-- Auto-save when Neovim loses focus
+vim.api.nvim_create_autocmd("FocusLost", {
+  group = vim.api.nvim_create_augroup("AutoSave", { clear = true }),
+  callback = function()
+    vim.cmd("silent! wall")
+  end,
+})
 
