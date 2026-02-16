@@ -26,8 +26,10 @@ local plugins = {
   require("plugins.neo_tree"),
   require("plugins.telescope"),
   require("plugins.toggleterm"),
+  require("plugins.gitsigns"),
   -- require("plugins.barbar"),  -- Disabled in favor of custom tabline
   require("plugins.lazygit"),
+  require("plugins.which_key"),
 }
 
 -- Extend with colorscheme plugins (this module returns a list).

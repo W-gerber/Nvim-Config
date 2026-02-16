@@ -6,14 +6,22 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = "Move to right window" })
 -- Leader key
 vim.g.mapleader = " "
 
--- =========================
--- Buffer / file shortcuts
--- =========================
 local utils = require("core.utils")
 local safe_bufdelete = utils.safe_bufdelete
 
-local function close_current_buffer(force)
-  safe_bufdelete(vim.api.nvim_get_current_buf(), force)
+local uv = vim.uv or vim.loop
+
+local function close_buffer(bufnr, force)
+  safe_bufdelete(bufnr or vim.api.nvim_get_current_buf(), force)
+end
+
+local function close_other_buffers(force)
+  local current = vim.api.nvim_get_current_buf()
+  for _, b in ipairs(vim.api.nvim_list_bufs()) do
+    if b ~= current and vim.api.nvim_buf_is_loaded(b) and vim.bo[b].buflisted then
+      safe_bufdelete(b, force)
+    end
+  end
 end
 
 -- New empty file (buffer)
@@ -21,30 +29,20 @@ vim.keymap.set("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer", silent
 
 -- Close current file (buffer)
 vim.keymap.set("n", "<leader>bc", function()
-  close_current_buffer(false)
+  close_buffer(nil, false)
 end, { desc = "Close buffer", silent = true })
 
 vim.keymap.set("n", "<leader>bC", function()
-  close_current_buffer(true)
+  close_buffer(nil, true)
 end, { desc = "Force close buffer", silent = true })
 
 -- Close other files (buffers)
 vim.keymap.set("n", "<leader>bo", function()
-  local current = vim.api.nvim_get_current_buf()
-  for _, b in ipairs(vim.api.nvim_list_bufs()) do
-    if b ~= current and vim.api.nvim_buf_is_loaded(b) and vim.bo[b].buflisted then
-      safe_bufdelete(b, false)
-    end
-  end
+  close_other_buffers(false)
 end, { desc = "Close other buffers", silent = true })
 
 vim.keymap.set("n", "<leader>bO", function()
-  local current = vim.api.nvim_get_current_buf()
-  for _, b in ipairs(vim.api.nvim_list_bufs()) do
-    if b ~= current and vim.api.nvim_buf_is_loaded(b) and vim.bo[b].buflisted then
-      safe_bufdelete(b, true)
-    end
-  end
+  close_other_buffers(true)
 end, { desc = "Force close other buffers", silent = true })
 
 -- Provider config (silence warnings for providers you don't use)
@@ -109,11 +107,14 @@ vim.api.nvim_create_autocmd("FileType", {
 -- Windows: ensure MSYS2 MinGW64 runtime DLLs are discoverable.
 -- nvim-treesitter spawns gcc which then spawns internal binaries (cc1.exe) that rely on PATH.
 do
-  local mingw64_bin = "C:\\msys64\\mingw64\\bin"
-  if vim.fn.isdirectory(mingw64_bin) == 1 then
-    local path = vim.env.PATH or ""
-    if not path:lower():find(mingw64_bin:lower(), 1, true) then
-      vim.env.PATH = mingw64_bin .. ";" .. path
+  local sysname = uv and uv.os_uname and uv.os_uname().sysname or vim.loop.os_uname().sysname
+  if sysname == "Windows_NT" then
+    local mingw64_bin = "C:\\msys64\\mingw64\\bin"
+    if vim.fn.isdirectory(mingw64_bin) == 1 then
+      local path = vim.env.PATH or ""
+      if not path:lower():find(mingw64_bin:lower(), 1, true) then
+        vim.env.PATH = mingw64_bin .. ";" .. path
+      end
     end
   end
 end
@@ -121,7 +122,7 @@ end
 -- Lazy.nvim bootstrap
 -- =========================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.uv.fs_stat(lazypath) then
+if not (uv and uv.fs_stat and uv.fs_stat(lazypath)) then
   vim.fn.system({
     "git",
     "clone",
@@ -138,14 +139,48 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup(require("plugins"), {
   -- No plugins in this config use luarocks; disabling avoids Lua 5.1 warnings on Windows.
   rocks = { enabled = false },
+  defaults = {
+    lazy = true,
+    version = false,
+  },
+  checker = {
+    enabled = false,
+  },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+        "rplugin",
+        "netrw",
+        "netrwPlugin",
+        "netrwSettings",
+        "netrwFileHandlers",
+      },
+    },
+  },
 })
 
 -- =========================
 -- Theme + Lualine
 -- =========================
-pcall(function()
-  require("theme_switcher").setup()
-end)
+-- Glass / neon UI: keep core surfaces transparent but readable.
+do
+  local glass_group = vim.api.nvim_create_augroup("GlassUI", { clear = true })
+  vim.api.nvim_create_autocmd("ColorScheme", {
+    group = glass_group,
+    callback = function()
+      local set = vim.api.nvim_set_hl
+      set(0, "Normal",      { bg = "NONE" })
+      set(0, "NormalFloat", { bg = "NONE" })
+      set(0, "FloatBorder", { bg = "NONE" })
+      set(0, "CursorLine",  { bg = "#111111" })
+    end,
+  })
+end
 
 -- Defer statusline and tabline setup so they don't block initial render.
 -- They load right after the UI is drawn (VeryLazy fires ~10ms after startup).
@@ -153,7 +188,9 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "VeryLazy",
   once = true,
   callback = function()
-    pcall(require, "statusline")
+    pcall(function()
+      require("theme_switcher").setup()
+    end)
     pcall(function()
       require("tabline").setup()
     end)

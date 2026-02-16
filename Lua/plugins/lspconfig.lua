@@ -40,6 +40,14 @@ return {
     vim.api.nvim_create_autocmd("LspAttach", {
       group = lsp_group,
       callback = function(ev)
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+
+        -- For Java (jdtls), disable semantic tokens so Treesitter controls
+        -- highlighting. This avoids multi-colored chains like System.out.print.
+        if client and client.name == "jdtls" and client.server_capabilities.semanticTokensProvider then
+          client.server_capabilities.semanticTokensProvider = nil
+        end
+
         local opts = { buffer = ev.buf, silent = true }
         local map = function(mode, lhs, rhs, desc)
           vim.keymap.set(mode, lhs, rhs, vim.tbl_extend("force", opts, { desc = desc }))
