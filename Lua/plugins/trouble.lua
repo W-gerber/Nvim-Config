@@ -3,7 +3,7 @@ return {
   -- Better than the default quickfix/location list, with icons and context.
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  cmd = { "Trouble", "TroubleToggle" },
+  cmd = { "Trouble" },
   keys = {
     {
       "<leader>xx",

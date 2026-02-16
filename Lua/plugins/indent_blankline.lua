@@ -5,6 +5,7 @@ return {
   -- - Highlight the current scope subtly
   -- - Do NOT clutter empty lines
   "lukas-reineke/indent-blankline.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   main = "ibl",
   opts = {
     indent = {
@@ -42,7 +43,9 @@ return {
 
     require("ibl").setup(opts)
 
+    local ibl_group = vim.api.nvim_create_augroup("IblHighlights", { clear = true })
     vim.api.nvim_create_autocmd("ColorScheme", {
+      group = ibl_group,
       callback = function()
         vim.api.nvim_set_hl(0, "IblIndent", { link = "LineNr" })
         vim.api.nvim_set_hl(0, "IblScope", { link = "CursorLineNr" })

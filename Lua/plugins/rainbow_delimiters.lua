@@ -2,6 +2,7 @@ return {
   -- Treesitter-based rainbow delimiters (VS Code-like bracket colorization)
   -- Nested (), {}, [] get different highlight groups.
   "hiphish/rainbow-delimiters.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   config = function()
     -- Link rainbow groups to existing theme-highlight groups (no hard-coded colors)
@@ -41,7 +42,9 @@ return {
     }
 
     -- Re-apply links on colorscheme changes
+    local rainbow_group = vim.api.nvim_create_augroup("RainbowDelimiterHighlights", { clear = true })
     vim.api.nvim_create_autocmd("ColorScheme", {
+      group = rainbow_group,
       callback = function()
         hl(0, "RainbowDelimiterRed", { link = "DiagnosticError" })
         hl(0, "RainbowDelimiterYellow", { link = "DiagnosticWarn" })

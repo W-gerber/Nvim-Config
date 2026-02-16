@@ -1,5 +1,6 @@
 return {
   "williamboman/mason.nvim",
+  cmd = "Mason",
   build = ":MasonUpdate",
   dependencies = {
     "williamboman/mason-lspconfig.nvim",
@@ -11,17 +12,17 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "jdtls",
+        "lua_ls",
       },
       automatic_installation = true,
     })
 
     require("mason-tool-installer").setup({
       ensure_installed = {
-        "jdtls",
         "google-java-format",
       },
       auto_update = false,
-      run_on_start = true,
+      run_on_start = false,
     })
   end,
 }

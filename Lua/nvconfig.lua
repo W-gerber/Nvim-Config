@@ -40,8 +40,14 @@ return {
       -- Theme-specific override files you can edit:
       -- - Lua/themes/tokyonight.lua
       -- - Lua/themes/default_light.lua
-      tokyonight = require("themes.tokyonight"),
-      ["default-light"] = require("themes.default_light"),
+      tokyonight = (function()
+        local ok, t = pcall(require, "themes.tokyonight")
+        return ok and t or {}
+      end)(),
+      ["default-light"] = (function()
+        local ok, t = pcall(require, "themes.default_light")
+        return ok and t or {}
+      end)(),
     },
   },
     -- Minimal UI table to satisfy base46 integrations that expect NvChad config.

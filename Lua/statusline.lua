@@ -1,12 +1,27 @@
 -- Lualine bubbles theme with neon transparency
+local ok_theme, theme = pcall(require, "theme")
+local neon = (ok_theme and theme and theme.neon) or {
+  cyan        = "#00d7ff",
+  hotpink     = "#ff2d95",
+  lime        = "#b7ff3a",
+  purple      = "#9d7cff",
+  orange      = "#ff9e1b",
+  white       = "#ffffff",
+  gray        = "#808080",
+  neon_yellow = "#CFFF04",
+  light_purple = "#d6afff",
+  blue        = "#1e90ff",
+  bg          = "#080808",
+}
+
 local colors = {
-  hotpink  = '#ff2d95',
-  neon_yellow = '#CFFF04',
-  cyan     = '#00BCE3',
-  red      = '#ff5189',
-  black    = '#080808',
-  white    = '#c6c6c6',
-  grey     = '#303030',
+  hotpink     = neon.hotpink,
+  neon_yellow = neon.neon_yellow,
+  cyan        = neon.cyan,
+  red         = "#ff5189",
+  black       = neon.bg or "#080808",
+  white       = "#c6c6c6",
+  grey        = "#303030",
 }
 
 local bubbles_theme = {
@@ -72,11 +87,18 @@ require('lualine').setup {
   extensions = {},
 }
 
--- Ensure transparency
-vim.cmd("hi StatusLine guibg=NONE guifg=" .. colors.white)
-vim.cmd("hi StatusLineNC guibg=NONE guifg=" .. colors.grey)
-vim.cmd("hi LualineNormal guibg=NONE")
-vim.cmd("hi LualineInsert guibg=NONE")
-vim.cmd("hi LualineVisual guibg=NONE")
+-- Ensure transparency (reapplied on ColorScheme)
+local function apply_statusline_transparency()
+  vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", fg = colors.white })
+  vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", fg = colors.grey })
+end
+
+apply_statusline_transparency()
+
+local sl_group = vim.api.nvim_create_augroup("StatuslineTransparency", { clear = true })
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = sl_group,
+  callback = apply_statusline_transparency,
+})
 vim.cmd("hi LualineReplace guibg=NONE")
 vim.cmd("hi LualineCommand guibg=NONE")

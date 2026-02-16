@@ -1,6 +1,5 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
-  event = "VeryLazy",
   cmd = {
     "CopilotChat",
     "CopilotChatOpen",
@@ -24,7 +23,16 @@ return {
     { "<leader>cm", "<cmd>CopilotChatModels<cr>", desc = "Copilot Chat: models", mode = "n" },
     { "<leader>cA", "<cmd>CopilotChatAgent<cr>", desc = "Copilot Chat: agent mode", mode = "n" },
     {
-      "<leader>ca",
+      "<leader>cg",
+      function()
+        local chat = require("CopilotChat")
+        chat.open({ prompt = "/Agent" })
+      end,
+      desc = "Copilot Chat: open agent",
+      mode = "n",
+    },
+    {
+      "<leader>cq",
       function()
         local input = vim.fn.input("Copilot ask (buffer): ")
         if input == nil or input == "" then
@@ -75,7 +83,9 @@ return {
     hl_link("CopilotChatUri", "Underlined")
     hl_link("CopilotChatAnnotation", "Comment")
 
+    local copilot_chat_group = vim.api.nvim_create_augroup("CopilotChatBuf", { clear = true })
     vim.api.nvim_create_autocmd("BufEnter", {
+      group = copilot_chat_group,
       pattern = "copilot-*",
       callback = function()
         vim.opt_local.number = false

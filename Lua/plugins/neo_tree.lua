@@ -1,6 +1,10 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
+  cmd = "Neotree",
+  keys = {
+    { "<leader>e", function() require("neo-tree.command").execute({ toggle = true, dir = require("core.utils").everything }) end, desc = "Toggle Neo-tree" },
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -8,6 +12,7 @@ return {
   },
   config = function()
     local neotree = require("neo-tree")
+    local utils = require("core.utils")
     neotree.setup({
       close_if_last_window = true,
       popup_border_style = "rounded",
@@ -25,10 +30,10 @@ return {
         },
       },
       filesystem = {
-        follow_current_file = true,
+        follow_current_file = { enabled = true },
         group_empty_dirs = true,
         hijack_netrw_behavior = "open_default",
-        cwd = "C:/Users/wgerb/Desktop/Everything",
+        cwd = utils.everything,
       },
       default_component_configs = {
         indent = {
@@ -58,10 +63,6 @@ return {
         },
       },
     })
-
-    vim.keymap.set("n", "<leader>e", function()
-      require("neo-tree.command").execute({ toggle = true, dir = "C:/Users/wgerb/Desktop/Everything" })
-    end, { desc = "Toggle Neo-tree in Everything folder", silent = true, noremap = true })
 
     -- Function to apply neo-tree highlights based on current theme
     local function apply_neotree_highlights()
@@ -133,7 +134,9 @@ return {
     apply_neotree_highlights()
 
     -- Reapply highlights when colorscheme changes
+    local neotree_hl_group = vim.api.nvim_create_augroup("NeoTreeHighlights", { clear = true })
     vim.api.nvim_create_autocmd("ColorScheme", {
+      group = neotree_hl_group,
       pattern = "*",
       callback = function()
         -- Schedule so we run after the new colorscheme finishes applying highlights
@@ -143,6 +146,7 @@ return {
 
     -- Also reapply when base46 reloads highlights (theme_switcher)
     vim.api.nvim_create_autocmd("User", {
+      group = neotree_hl_group,
       pattern = "ThemeSwitched",
       callback = function()
         vim.schedule(apply_neotree_highlights)

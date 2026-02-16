@@ -81,10 +81,18 @@ function M:get_debug_name()
   return "nvim_options"
 end
 
+-- Cache options list since it doesn't change at runtime.
+local _cached_items = nil
+
 function M:complete(_, callback)
+  if _cached_items then
+    callback({ items = _cached_items, isIncomplete = false })
+    return
+  end
+
   local ok, all = pcall(vim.api.nvim_get_all_options_info)
   if not ok or type(all) ~= "table" then
-    callback({ items = {}, isIncomplete = true })
+    callback({ items = {}, isIncomplete = false })
     return
   end
 
@@ -104,7 +112,8 @@ function M:complete(_, callback)
     end
   end
 
-  callback({ items = items, isIncomplete = true })
+  _cached_items = items
+  callback({ items = items, isIncomplete = false })
 end
 
 return M
