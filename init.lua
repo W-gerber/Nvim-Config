@@ -11,6 +11,14 @@ local safe_bufdelete = utils.safe_bufdelete
 
 local uv = vim.uv or vim.loop
 
+local function first_existing_dir(paths)
+  for _, path in ipairs(paths) do
+    if type(path) == "string" and path ~= "" and vim.fn.isdirectory(path) == 1 then
+      return path
+    end
+  end
+end
+
 local function close_buffer(bufnr, force)
   safe_bufdelete(bufnr or vim.api.nvim_get_current_buf(), force)
 end
@@ -109,8 +117,13 @@ vim.api.nvim_create_autocmd("FileType", {
 do
   local sysname = uv and uv.os_uname and uv.os_uname().sysname or vim.loop.os_uname().sysname
   if sysname == "Windows_NT" then
-    local mingw64_bin = "C:\\msys64\\mingw64\\bin"
-    if vim.fn.isdirectory(mingw64_bin) == 1 then
+    local mingw64_bin = first_existing_dir({
+      vim.env.MINGW64_BIN,
+      "C:/msys64/mingw64/bin",
+      "C:/mingw64/bin",
+    })
+
+    if mingw64_bin then
       local path = vim.env.PATH or ""
       if not path:lower():find(mingw64_bin:lower(), 1, true) then
         vim.env.PATH = mingw64_bin .. ";" .. path
@@ -123,13 +136,27 @@ end
 -- =========================
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (uv and uv.fs_stat and uv.fs_stat(lazypath)) then
-  vim.fn.system({
+  if vim.fn.executable("git") == 0 then
+    vim.api.nvim_err_writeln("git is required to bootstrap lazy.nvim")
+    return
+  end
+
+  local clone_output = vim.fn.system({
     "git",
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
     lazypath,
   })
+
+  if vim.v.shell_error ~= 0 then
+    clone_output = tostring(clone_output or ""):gsub("%s+$", "")
+    vim.api.nvim_err_writeln("Failed to bootstrap lazy.nvim")
+    if clone_output ~= "" then
+      vim.api.nvim_err_writeln(clone_output)
+    end
+    return
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -170,16 +197,21 @@ require("lazy").setup(require("plugins"), {
 -- Glass / neon UI: keep core surfaces transparent but readable.
 do
   local glass_group = vim.api.nvim_create_augroup("GlassUI", { clear = true })
+  local function apply_glass_highlights()
+    local cursorline_bg = vim.o.background == "light" and "#e8ecf4" or "#111111"
+    local set = vim.api.nvim_set_hl
+    set(0, "Normal",      { bg = "NONE" })
+    set(0, "NormalFloat", { bg = "NONE" })
+    set(0, "FloatBorder", { bg = "NONE" })
+    set(0, "CursorLine",  { bg = cursorline_bg })
+  end
+
   vim.api.nvim_create_autocmd("ColorScheme", {
     group = glass_group,
-    callback = function()
-      local set = vim.api.nvim_set_hl
-      set(0, "Normal",      { bg = "NONE" })
-      set(0, "NormalFloat", { bg = "NONE" })
-      set(0, "FloatBorder", { bg = "NONE" })
-      set(0, "CursorLine",  { bg = "#111111" })
-    end,
+    callback = apply_glass_highlights,
   })
+
+  apply_glass_highlights()
 end
 
 -- Defer statusline and tabline setup so they don't block initial render.

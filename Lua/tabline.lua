@@ -14,8 +14,8 @@ local defaults = {
     ellipsis = "…",
     modified = "●",
     folder = "",
-    -- Clock glyph to match the screenshot style
-    clock = "",
+    -- Clock glyph for the right-side utility pill
+    clock = "",
     -- Small left status icon pill (project/user)
     project = "",
   },
@@ -28,10 +28,10 @@ local defaults = {
   },
   colors = {
     -- These are used as overrides. When nil, we pull from `theme.neon`.
-    active_bg = nil,
-    inactive_bg = nil,
-    status_bg = nil,
-    text_on_accent = nil,
+    active_bg = "#13203a",
+    inactive_bg = "#0f1830",
+    status_bg = "#082850",
+    text_on_accent = "#ffffff",
     text_muted = nil,
     badge_fg_active = nil,
     badge_fg_inactive = nil,
@@ -40,13 +40,14 @@ local defaults = {
     -- Status pill background should match the statusline “mode bubble”.
     -- Defaults mirror `Lua/statusline.lua`.
     status_by_mode = {
-      n = "#ff2d95", -- normal (hotpink)
+      n = "#082850", -- normal (navy)
       i = "#CFFF04", -- insert (neon_yellow)
-      v = "#00BCE3", -- visual (cyan)
-      V = "#00BCE3",
-      ["\22"] = "#00BCE3", -- visual block (CTRL-V)
+      v = "#ff2d95", -- visual (hotpink)
+      V = "#ff2d95",
+      ["\22"] = "#ff2d95", -- visual block (CTRL-V)
       R = "#ff5189", -- replace (red)
-      c = "#ff2d95", -- command
+      c = "#00d7ff", -- command
+      t = "#9d7cff", -- terminal
     },
   },
 }
@@ -68,14 +69,20 @@ local function get_palette(cfg)
   }
 
   return {
-    active_bg = cfg.colors.active_bg or neon.hotpink,
-    inactive_base = neon.purple,
-    status_bg = cfg.colors.status_bg or neon.cyan,
+    active_bg = cfg.colors.active_bg or "#13203a",
+    inactive_base = cfg.colors.inactive_bg or "#0f1830",
+    status_bg = cfg.colors.status_bg or "#082850",
+    panel = "#0b1220",
+    panel_alt = "#0f1830",
+    panel_soft = "#13203a",
     bg = cfg.colors.bg or neon.bg or "#080808",
-    text_on_accent = cfg.colors.text_on_accent or (neon.bg or "#080808"),
-    text_muted = cfg.colors.text_muted or neon.white,
-    badge_fg_active = cfg.colors.badge_fg_active or neon.lime,
-    badge_fg_inactive = cfg.colors.badge_fg_inactive or neon.cyan,
+    text_on_accent = cfg.colors.text_on_accent or neon.white,
+    text_muted = cfg.colors.text_muted or "#d6deef",
+    badge_fg_active = cfg.colors.badge_fg_active or neon.cyan,
+    badge_fg_inactive = cfg.colors.badge_fg_inactive or neon.hotpink,
+    white = neon.white or "#ffffff",
+    blue = neon.blue or "#1e90ff",
+    cyan = neon.cyan or "#00d7ff",
     orange = neon.orange,
   }
 end
@@ -120,29 +127,54 @@ local function shade_hex(hex, factor)
   return string.format("#%02x%02x%02x", r, g, b)
 end
 
+local function text_for_bg(hex)
+  if type(hex) ~= "string" then
+    return defaults.colors.text_on_accent or "#ffffff"
+  end
+
+  local h = hex:gsub("#", "")
+  if #h ~= 6 then
+    return defaults.colors.text_on_accent or "#ffffff"
+  end
+
+  local r = tonumber(h:sub(1, 2), 16)
+  local g = tonumber(h:sub(3, 4), 16)
+  local b = tonumber(h:sub(5, 6), 16)
+  if not r or not g or not b then
+    return defaults.colors.text_on_accent or "#ffffff"
+  end
+
+  local brightness = (r * 299 + g * 587 + b * 114) / 1000
+  return brightness >= 150 and "#0b1220" or "#ffffff"
+end
+
 local function setup_highlights(cfg)
   local p = get_palette(cfg)
   local hl = vim.api.nvim_set_hl
 
-  -- Status area uses two pills like the screenshot:
-  -- - left project icon pill uses statusline mode color
-  -- - right clock pill uses statusline mode color
+  -- Status area uses darker rounded pills so it feels solid against a
+  -- transparent terminal background.
   local mode_bg = status_bg_for_mode(cfg) or p.status_bg
+  local status_bg = shade_hex(p.panel, 0.90)
+  local clock_bg = shade_hex(p.panel_alt, 0.90)
 
   local inactive_bg = cfg.colors.inactive_bg or shade_hex(p.inactive_base, cfg.shade.inactive_bg)
   local active_bg = p.active_bg
   local active_badge_bg = shade_hex(active_bg, cfg.shade.badge_bg)
   local inactive_badge_bg = shade_hex(inactive_bg, cfg.shade.badge_bg)
-  local status_badge_bg = shade_hex(mode_bg, cfg.shade.badge_bg)
-  local clock_badge_bg = shade_hex(mode_bg, cfg.shade.badge_bg)
+  local status_badge_bg = shade_hex(status_bg, cfg.shade.badge_bg)
+  local clock_badge_bg = shade_hex(clock_bg, cfg.shade.badge_bg)
+  local active_text = text_for_bg(active_bg)
+  local status_text = p.white
+  local clock_text = p.white
 
   -- Base
   hl(0, "TabLine", { bg = "NONE", fg = p.text_muted })
-  hl(0, "TabLineFill", { bg = "NONE" })
+  hl(0, "TabLineFill", { bg = "NONE", fg = p.text_muted })
 
   -- Active pill: “floating” (edges on NONE background)
   hl(0, "TabLinePillActiveLeft", { fg = active_bg, bg = "NONE" })
-  hl(0, "TabLinePillActiveText", { fg = p.text_on_accent, bg = active_bg, bold = true })
+  hl(0, "TabLinePillActiveText", { fg = active_text, bg = active_bg, bold = true })
   hl(0, "TabLinePillActiveRight", { fg = active_bg, bg = "NONE" })
 
   -- Active badge: nested mini-pill inside active pill
@@ -162,24 +194,24 @@ local function setup_highlights(cfg)
   hl(0, "TabLinePillInactiveBadgeRight", { fg = inactive_badge_bg, bg = inactive_bg })
   hl(0, "TabLinePillInactiveMod", { fg = p.orange, bg = inactive_bg })
 
-  -- Status pill (left icon pill) uses statusline mode color
-  hl(0, "TabLinePillStatusLeft", { fg = mode_bg, bg = "NONE" })
-  hl(0, "TabLinePillStatusText", { fg = p.text_on_accent, bg = mode_bg, bold = true })
-  hl(0, "TabLinePillStatusRight", { fg = mode_bg, bg = "NONE" })
+  -- Right-side utility pills borrow the statusline's darker segmented look.
+  hl(0, "TabLinePillStatusLeft", { fg = status_bg, bg = "NONE" })
+  hl(0, "TabLinePillStatusText", { fg = status_text, bg = status_bg, bold = true })
+  hl(0, "TabLinePillStatusRight", { fg = status_bg, bg = "NONE" })
 
-  -- Clock pill (right) matches statusline mode color
-  hl(0, "TabLinePillClockLeft", { fg = mode_bg, bg = "NONE" })
-  hl(0, "TabLinePillClockText", { fg = p.text_on_accent, bg = mode_bg, bold = true })
-  hl(0, "TabLinePillClockRight", { fg = mode_bg, bg = "NONE" })
+  hl(0, "TabLinePillClockLeft", { fg = clock_bg, bg = "NONE" })
+  hl(0, "TabLinePillClockText", { fg = clock_text, bg = clock_bg, bold = true })
+  hl(0, "TabLinePillClockIcon", { fg = clock_text, bg = clock_bg, bold = true })
+  hl(0, "TabLinePillClockRight", { fg = clock_bg, bg = "NONE" })
 
   -- Optional nested badge tones (kept for consistency)
-  hl(0, "TabLinePillStatusBadgeLeft", { fg = status_badge_bg, bg = mode_bg })
-  hl(0, "TabLinePillStatusBadgeText", { fg = p.text_on_accent, bg = status_badge_bg, bold = true })
-  hl(0, "TabLinePillStatusBadgeRight", { fg = status_badge_bg, bg = mode_bg })
+  hl(0, "TabLinePillStatusBadgeLeft", { fg = status_badge_bg, bg = status_bg })
+  hl(0, "TabLinePillStatusBadgeText", { fg = status_text, bg = status_badge_bg, bold = true })
+  hl(0, "TabLinePillStatusBadgeRight", { fg = status_badge_bg, bg = status_bg })
 
-  hl(0, "TabLinePillClockBadgeLeft", { fg = clock_badge_bg, bg = mode_bg })
-  hl(0, "TabLinePillClockBadgeText", { fg = p.text_on_accent, bg = clock_badge_bg, bold = true })
-  hl(0, "TabLinePillClockBadgeRight", { fg = clock_badge_bg, bg = mode_bg })
+  hl(0, "TabLinePillClockBadgeLeft", { fg = clock_badge_bg, bg = clock_bg })
+  hl(0, "TabLinePillClockBadgeText", { fg = clock_text, bg = clock_badge_bg, bold = true })
+  hl(0, "TabLinePillClockBadgeRight", { fg = clock_badge_bg, bg = clock_bg })
 end
 
 -- Truncate filename intelligently
@@ -187,6 +219,7 @@ local function truncate_name(name, max_len)
   if #name <= max_len then
     return name
   end
+
   -- Keep extension visible
   local base, ext = name:match("^(.+)%.([^%.]+)$")
   if base and ext then
@@ -195,6 +228,7 @@ local function truncate_name(name, max_len)
       return base:sub(1, needed) .. defaults.glyphs.ellipsis .. "." .. ext
     end
   end
+
   return name:sub(1, max_len - 1) .. defaults.glyphs.ellipsis
 end
 
@@ -288,7 +322,7 @@ local function status_pills(cfg)
   local ft = vim.api.nvim_get_option_value("filetype", { buf = buf })
   local status_icon = (ft == "alpha") and cfg.glyphs.project or cfg.glyphs.folder
 
-  -- Small left icon pill + plain text label + separate clock pill
+  -- Small left icon pill + plain text label + cleaner clock pill.
   local icon_pill = pill_segment(
     "TabLinePillStatusLeft",
     "TabLinePillStatusText",
@@ -304,7 +338,7 @@ local function status_pills(cfg)
     "TabLinePillClockRight",
     left_g,
     right_g,
-    " " .. cfg.glyphs.clock .. " " .. time .. " "
+    " %#TabLinePillClockIcon#" .. cfg.glyphs.clock .. "%#TabLinePillClockText# " .. time .. " "
   )
 
   return icon_pill .. "%#TabLineFill# " .. cwd .. "  " .. clock_pill

@@ -7,7 +7,11 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
-    require("mason").setup()
+    require("mason").setup({
+      ui = {
+        border = "rounded",
+      },
+    })
 
     require("mason-lspconfig").setup({
       ensure_installed = {
@@ -20,9 +24,11 @@ return {
     require("mason-tool-installer").setup({
       ensure_installed = {
         "google-java-format",
+        "stylua",
       },
       auto_update = false,
-      run_on_start = false,
+      run_on_start = true,
+      start_delay = 3000,
     })
   end,
 }
